@@ -10,3 +10,6 @@
 pyvenv.cfg
 .venv
 pip-selfcheck.json
+
+**/.pytest_cache/
+**/__pycache__/
