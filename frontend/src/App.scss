@@ -18,8 +18,21 @@ body {
 
 #root {
   width: 95%;
-}
 
+  .github-link {
+    bottom: 0;
+    position: absolute;
+    right: 4rem;
+    color: $black;
+  
+    .nes-balloon {
+      top: -8rem;
+      position: relative;
+      left: 2rem;
+      animation: bounce .3s infinite alternate;
+    }
+  }
+}
 .with-margin-top {
   margin-top: 2rem;
 }
@@ -99,4 +112,16 @@ body {
     transform:scale(.7);
   }
 
+}
+
+
+// Key Frame (animation)
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
 }

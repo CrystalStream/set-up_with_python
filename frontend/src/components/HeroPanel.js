@@ -5,6 +5,14 @@ import Filters from './Filters'
 
 export default class HeroPanel extends React.Component {
 
+  state = {
+    allPokemons: [],
+    fireTypePokemons: [],
+    waterTypePokemons: [],
+    poisonTypePokemons: [],
+    isFetching: false
+  }
+
   componentDidMount() {
     
   }
