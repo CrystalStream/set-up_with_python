@@ -20,21 +20,27 @@ body {
   width: 95%;
 
   .github-link {
-    bottom: 0;
-    position: absolute;
-    right: 4rem;
+    padding-top: 9rem;
+    float: right;
     color: $black;
   
     .nes-balloon {
-      top: -8rem;
+      top: -5rem;
       position: relative;
-      left: 2rem;
       animation: bounce .3s infinite alternate;
     }
   }
 }
+
 .with-margin-top {
   margin-top: 2rem;
+}
+
+.pokecontainer {
+  margin-top: 5rem;
+  &:first-of-type {
+    margin-top: 0;
+  }
 }
 
 .nes-container {
@@ -46,12 +52,6 @@ body {
   &.with-margin-top {
     margin-top: 3rem;
   }
-
-  .spread-elements {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
 }
 
 .is-centered {
