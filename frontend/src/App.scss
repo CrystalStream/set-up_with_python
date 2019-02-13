@@ -1,0 +1,89 @@
+@import './index.scss';
+
+* {
+  font-family: 'Press Start 2P', cursive !important;
+}
+
+body {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #D3CCE3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#root {
+  width: 95%;
+}
+
+.nes-container::before {
+  background: white;
+}
+
+.nes-container.with-margin-top {
+  margin-top: 3rem;
+}
+
+.is-centered {
+  text-align: center;
+}
+
+.with-padding-on-sides {
+  padding: 0 1.7rem;
+}
+
+.card {
+  text-align: center;
+  border: 1px solid white;
+  padding: .8rem 0;
+  border: 9px ridge #9CAFC2;
+  border-radius: 2rem;
+
+  figure {
+    margin-bottom: 0;
+
+    &::after {
+      display: inline-block;
+      content: ' ';
+      position: relative;
+      top: 1rem;
+      left: 0;
+      background:#A6BBCF;
+      height: 1.3rem;
+      width: 100%;
+      z-index: -1;
+    }
+
+    &.unselected {
+      &::after {
+        background:#CC9490;
+      }
+    }
+
+    &.selected {
+      &::after {
+        background: #90CCA9;
+      }
+    }
+  }
+
+  figcaption {
+    margin-top: .5rem;
+    font-size: .6rem;
+    margin-bottom: -2rem;
+    text-align: center;
+    color: #212529;
+  }
+}
+
+.tile {
+  transition: .3s ease-in-out;
+
+  &.inactive {
+    transform:scale(.7);
+  }
+
+}

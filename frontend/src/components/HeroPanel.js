@@ -17,29 +17,36 @@ export default class HeroPanel extends React.Component {
       <div className="nes-container is-rounded is-dark with-title">
         <h2 className="title">Characters</h2>
         <div className="pure-g">
-            <div className="pure-u-1-3"><p>Thirds</p></div>
-            <div className="pure-u-1-3"><p>Thirds</p></div>
-            <div className="pure-u-1-3"><p>Thirds</p></div>
-        </div>
-        <div className="pure-g">
-            <div className="pure-u-1-3"><p>Thirds</p></div>
-            <div className="pure-u-1-3"><p>Thirds</p></div>
-            <div className="pure-u-1-3"><p>Thirds</p></div>
-        </div>
-        <div className="pure-g">
-            <div className="pure-u-1-3"><p>Thirds</p></div>
-            <div className="pure-u-1-3"><p>Thirds</p></div>
-            <div className="pure-u-1-3"><p>Thirds</p></div>
-        </div>
-        <div className="pure-g">
-            <div className="pure-u-1-3"><p>Thirds</p></div>
-            <div className="pure-u-1-3"><p>Thirds</p></div>
-            <div className="pure-u-1-3"><p>Thirds</p></div>
-        </div>
-        <div className="pure-g">
-            <div className="pure-u-1-3"><p>Thirds</p></div>
-            <div className="pure-u-1-3"><p>Thirds</p></div>
-            <div className="pure-u-1-3"><p>Thirds</p></div>
+          <div className="pure-u-1-3 with-padding-on-sides">
+            <div className="tile">
+              <div className="card">
+                <figure className="">
+                  <img src="https://via.placeholder.com/150" alt="Trulli"  />
+                  <figcaption>Wolverine.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div className="pure-u-1-3 with-padding-on-sides">
+            <div className="tile">
+              <div className="card">
+                <figure className="">
+                  <img src="https://via.placeholder.com/150" alt="Trulli"  />
+                  <figcaption>Wolverine.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div className="pure-u-1-3 with-padding-on-sides">
+            <div className="tile">
+              <div className="card">
+                <figure className="">
+                  <img src="https://via.placeholder.com/150" alt="Trulli"  />
+                  <figcaption>Wolverine.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

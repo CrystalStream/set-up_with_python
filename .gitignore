@@ -19,23 +19,23 @@ pip-selfcheck.json
 # React App
 
 # dependencies
-frontend/char-world/node_modules
-frontend/char-world/.pnp
-frontend/char-world/.pnp.js
+frontend/node_modules
+frontend/.pnp
+frontend/.pnp.js
 
 # testing
-frontend/char-world/coverage
+frontend/coverage
 
 # production
-frontend/char-world/build
+frontend/build
 
 # misc
 .DS_Store
-frontend/char-world/.env.local
-frontend/char-world/.env.development.local
-frontend/char-world/.env.test.local
-frontend/char-world/.env.production.local
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
 
-frontend/char-world/npm-debug.log*
-frontend/char-world/yarn-debug.log*
-frontend/char-world/yarn-error.log*
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*

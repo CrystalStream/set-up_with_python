@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import HeroPanel from './components/HeroPanel'
 
 class App extends React.Component {
