@@ -13,3 +13,29 @@ pip-selfcheck.json
 
 **/.pytest_cache/
 **/__pycache__/
+
+
+
+# React App
+
+# dependencies
+frontend/char-world/node_modules
+frontend/char-world/.pnp
+frontend/char-world/.pnp.js
+
+# testing
+frontend/char-world/coverage
+
+# production
+frontend/char-world/build
+
+# misc
+.DS_Store
+frontend/char-world/.env.local
+frontend/char-world/.env.development.local
+frontend/char-world/.env.test.local
+frontend/char-world/.env.production.local
+
+frontend/char-world/npm-debug.log*
+frontend/char-world/yarn-debug.log*
+frontend/char-world/yarn-error.log*
