@@ -1,4 +1,5 @@
 @import './index.scss';
+@import './variables.scss';
 
 * {
   font-family: 'Press Start 2P', cursive !important;
@@ -9,9 +10,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #D3CCE3;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: $gradient-to;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, $gradient-from, $gradient-to);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, $gradient-from, $gradient-to); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -19,12 +20,21 @@ body {
   width: 95%;
 }
 
-.nes-container::before {
-  background: white;
-}
+.nes-container {
+  
+  &::before {
+    background: $white;
+  }
 
-.nes-container.with-margin-top {
-  margin-top: 3rem;
+  &.with-margin-top {
+    margin-top: 3rem;
+  }
+
+  .spread-elements {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
 }
 
 .is-centered {
@@ -32,14 +42,13 @@ body {
 }
 
 .with-padding-on-sides {
-  padding: 0 1.7rem;
+  padding: 0 12%;
 }
 
 .card {
   text-align: center;
-  border: 1px solid white;
   padding: .8rem 0;
-  border: 9px ridge #9CAFC2;
+  border: 9px ridge $card-char-border-color;
   border-radius: 2rem;
 
   figure {
@@ -51,7 +60,7 @@ body {
       position: relative;
       top: 1rem;
       left: 0;
-      background:#A6BBCF;
+      background:$char-regular-color;
       height: 1.3rem;
       width: 100%;
       z-index: -1;
@@ -59,13 +68,13 @@ body {
 
     &.unselected {
       &::after {
-        background:#CC9490;
+        background:$char-unselected-color;
       }
     }
 
     &.selected {
       &::after {
-        background: #90CCA9;
+        background: $char-selected-color;
       }
     }
   }
@@ -75,7 +84,7 @@ body {
     font-size: .6rem;
     margin-bottom: -2rem;
     text-align: center;
-    color: #212529;
+    color: $black;
   }
 }
 

@@ -49,7 +49,7 @@ def create_app():
 
   return app
 
-
+# only run when is called from the main treadh
 if __name__ == '__main__':
     app = create_app()
     app.run(port=5000)
