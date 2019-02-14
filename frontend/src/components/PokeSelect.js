@@ -6,6 +6,7 @@ export default function PokeSelect(props) {
     <div className="nes-container is-rounded is-dark with-title">
       <h2 className="title">Characters</h2>
       <div className="pure-g spread-elements pokecontainer beauty">
+      <h2>Group A</h2>
       {
         props.beautyPokemons && props.beautyPokemons.map(pokemon => {
           return (
@@ -14,7 +15,6 @@ export default function PokeSelect(props) {
                 <div className="card">
                   <figure className={`${pokemon.types.length > 1 ? 'selected' : ''}`}>
                     <img src={pokemon.image} alt={pokemon.name} />
-                    <hr className="dynamic-background"/>
                     <figcaption>{pokemon.name}</figcaption>
                   </figure>
                 </div>
@@ -26,6 +26,7 @@ export default function PokeSelect(props) {
       <hr className="with-margin-vertical"/>
       </div>
       <div className="pure-g spread-elements pokecontainer ugly">
+      <h2>Group B</h2>
       {
         props.uglyPokemons && props.uglyPokemons.map(pokemon => {
           return (
@@ -34,7 +35,6 @@ export default function PokeSelect(props) {
                 <div className="card">
                   <figure className={`${pokemon.types.length > 1 ? 'selected' : ''}`}>
                     <img src={pokemon.image} alt={pokemon.name} />
-                    <hr className="dynamic-background"/>
                     <figcaption>{pokemon.name}</figcaption>
                   </figure>
                 </div>

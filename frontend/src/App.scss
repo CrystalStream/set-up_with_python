@@ -127,26 +127,14 @@ body {
 
   &.beauty {
     background: $beauty;
-
-    .dynamic-background {
-      border-color: $ugly
-    }
   }
 
   &.ugly {
     background: $ugly;
-
-    .dynamic-background {
-      border-color: $beauty
-    }
   }
 
   &.beauty.ugly {
     background: $beaugly-background;
-
-    .dynamic-background {
-      border-color: $beaugly-background
-    }
   }
 
 }
@@ -186,6 +174,10 @@ body {
       }
     }
   }
+}
+
+.text-right {
+  text-align: right;
 }
 
 

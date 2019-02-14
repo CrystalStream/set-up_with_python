@@ -1,6 +1,5 @@
 import React from 'react'
 import PokeSelect from './PokeSelect'
-import ChosenPokes from './ChosenPokes'
 import Filters from './Filters'
 import pokemons from '../utils/pokemons'
 
@@ -19,9 +18,19 @@ export default class PokePanel extends React.Component {
     })
   }
 
-  onSearchHandler = (data) => {
-    // const data = pokemons.getByType(typeA).concat(pokemons.getByType(typeB))
-    console.log('data', data)
+  onSearchHandler = async (type) => {
+    const rawResponse = await fetch(`http://localhost:5000/api/v1/${type}`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ a: this.state.beautyPokemons.map(p => p.name), b: this.state.uglyPokemons.map(p => p.name) })
+    });
+    const content = await rawResponse.json();
+  
+    console.log(content);
+
   }
 
   render() {
@@ -53,7 +62,7 @@ export default class PokePanel extends React.Component {
         <Filters onSearch={this.onSearchHandler}/>
       </div>
       
-      <div>
+      <div className="text-right">
         <a className="github-link" href="https://github.com/CrystalStream/set-up_with_python" target="_blank">
           <p className="nes-balloon from-right">Set it<br/>on GitHub</p>
           <i className="nes-octocat"></i>
