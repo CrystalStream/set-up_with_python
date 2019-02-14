@@ -20,13 +20,15 @@ body {
   width: 95%;
 
   .github-link {
-    padding-top: 9rem;
-    float: right;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    text-align: right;
     color: $black;
   
     .nes-balloon {
-      top: -5rem;
-      position: relative;
+      bottom: 5rem;
+      padding: .3rem;
       animation: bounce .3s infinite alternate;
     }
   }
@@ -36,8 +38,13 @@ body {
   margin-top: 2rem;
 }
 
+.with-margin-vertical {
+  margin: 2rem 0;
+}
+
 .pokecontainer {
-  margin-top: 5rem;
+  margin-top: 0rem;
+
   &:first-of-type {
     margin-top: 0;
   }
@@ -94,6 +101,11 @@ body {
         background: $char-selected-color;
       }
     }
+
+    img {
+      background: $white;
+      border-radius: 50%;
+    }
   }
 
   figcaption {
@@ -107,11 +119,73 @@ body {
 
 .tile {
   transition: .3s ease-in-out;
+  border-radius: 2rem;
 
-  &.inactive {
-    transform:scale(.7);
+  // &.inactive {
+  //   transform:scale(.7);
+  // }
+
+  &.beauty {
+    background: $beauty;
+
+    .dynamic-background {
+      border-color: $ugly
+    }
   }
 
+  &.ugly {
+    background: $ugly;
+
+    .dynamic-background {
+      border-color: $beauty
+    }
+  }
+
+  &.beauty.ugly {
+    background: $beaugly-background;
+
+    .dynamic-background {
+      border-color: $beaugly-background
+    }
+  }
+
+}
+
+.more-info {
+  .explanation {
+    display: inline-block;
+    font-size: 8px;
+    margin-left: 2rem;
+
+    label {
+      text-decoration: underline;
+    }
+
+    &:last-child {
+      margin-right: 0rem;
+    }
+
+    .color-square  {
+      width: 20px;
+      display: inline-block;
+      height: 20px;
+      position: relative;
+      bottom: .3rem;
+      right: .5rem;
+
+      &.beauty-color {
+        background: $beauty;
+      }
+      
+      &.beaugly-color {
+        background: $beaugly-background;
+      }
+
+      &.ugly-color {
+        background: $ugly; 
+      }
+    }
+  }
 }
 
 

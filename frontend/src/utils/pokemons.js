@@ -2,109 +2,87 @@ const pokemons = [
   {
       name: 'beedrill',
       image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png',
-      types: ['water', 'fire']
+      types: ['beauty']
   },
   {
       name: 'blastoise',
       image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png',
-      types: ['water', 'fire']
+      types: ['beauty']
   },
   {
       name: 'caterpie',
       image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png',
-      types: ['water']
+      types: ['beauty']
   },
   {
       name: 'bulbasaur',
       image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
-      types: ['water']
+      types: ['beauty']
   },
   {
       name: 'butterfree',
       image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png',
-      types: ['water']
+      types: ['beauty', 'ugly']
   },
   
   {
       name: 'charizard',
       image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png',
-      types: ['water', 'fire']
+      types: ['beauty', 'ugly']
   },
   {
       name: 'charmander',
       image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png',
-      types: ['fire', 'poison']
+      types: ['beauty', 'ugly']
   },
   {
       name: 'charmeleon',
       image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png',
-      types: ['fire']
+      types: ['beauty', 'ugly']
   },
   {
       name: 'ivysaur',
       image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png',
-      types: ['fire', 'poison']
+      types: ['ugly']
   },
   {
       name: 'kakuna',
       image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png',
-      types: ['fire']
+      types: ['ugly']
   },
   {
       name: 'metapod',
       image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png',
-      types: ['fire', 'water']
+      types: ['ugly']
   },
   {
       name: 'pidgeot',
       image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png',
-      types: ['poison']
+      types: ['ugly']
   },
-  {
-      name: 'pidgeotto',
-      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png',
-      types: ['poison', 'fire']
-  },
-  {
-      name: 'pidgey',
-      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png',
-      types: ['poison']
-  },
-  {
-      name: 'raticate',
-      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png',
-      types: ['poison']
-  },
-  {
-      name: 'rattata',
-      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png',
-      types: ['poison', 'water']
-  },
-  {
-      name: 'squirtle',
-      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png',
-      types: ['poison', 'fire']
-  },
-  {
-      name: 'venusaur',
-      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png',
-      types: ['poison']
-  },
-  {
-      name: 'wartortle',
-      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png',
-      types: ['poison', 'water']
-  },
-  {
-      name: 'weedle',
-      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png',
-      types: ['poison']
-  }
+//   {
+//       name: 'pidgeotto',
+//       image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png',
+//       types: ['ugly']
+//   },
+//   {
+//       name: 'pidgey',
+//       image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png',
+//       types: ['ugly']
+//   },
+//   {
+//       name: 'raticate',
+//       image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png',
+//       types: ['ugly']
+//   },
+//   {
+//       name: 'rattata',
+//       image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png',
+//       types: ['ugly']
+//   },
 ]
 
 export default {
   allPokemons: () => pokemons,
-  firePokemons: () => pokemons.filter(p => p.types.includes('fire')),
-  waterPokemons: () => pokemons.filter(p => p.types.includes('water')),
-  poisonPokemons: () => pokemons.filter(p => p.types.includes('poison'))
+  getByType: type => pokemons.filter(p => p.types.includes(type))
 }

@@ -5,15 +5,16 @@ export default function PokeSelect(props) {
   return (
     <div className="nes-container is-rounded is-dark with-title">
       <h2 className="title">Characters</h2>
-      <div className="pure-g spread-elements pokecontainer fire">
+      <div className="pure-g spread-elements pokecontainer beauty">
       {
-        props.firePokemons && props.firePokemons.map(pokemon => {
+        props.beautyPokemons && props.beautyPokemons.map(pokemon => {
           return (
-            <div key={pokemon.name} className="pure-u-1 pure-u-sm-1-3 pure-u-md-1-6">
-              <div className="tile">
+            <div key={pokemon.name} className="pure-u-1 pure-u-sm-1-4">
+              <div className={`tile ${pokemon.types.length > 1 ? 'inactive' : ''} ${pokemon.types.join(' ')}`}>
                 <div className="card">
-                  <figure className="">
+                  <figure className={`${pokemon.types.length > 1 ? 'selected' : ''}`}>
                     <img src={pokemon.image} alt={pokemon.name} />
+                    <hr className="dynamic-background"/>
                     <figcaption>{pokemon.name}</figcaption>
                   </figure>
                 </div>
@@ -22,34 +23,18 @@ export default function PokeSelect(props) {
           )
         })
       }
+      <hr className="with-margin-vertical"/>
       </div>
-      <div className="pure-g spread-elements pokecontainer water">
+      <div className="pure-g spread-elements pokecontainer ugly">
       {
-        props.waterPokemons && props.waterPokemons.map(pokemon => {
+        props.uglyPokemons && props.uglyPokemons.map(pokemon => {
           return (
-            <div key={pokemon.name} className="pure-u-1 pure-u-sm-1-3 pure-u-md-1-6">
-              <div className="tile">
+            <div key={pokemon.name} className="pure-u-1 pure-u-sm-1-4">
+              <div className={`tile ${pokemon.types.length > 1 ? 'inactive' : ''} ${pokemon.types.join(' ')}`}>
                 <div className="card">
-                  <figure className="">
+                  <figure className={`${pokemon.types.length > 1 ? 'selected' : ''}`}>
                     <img src={pokemon.image} alt={pokemon.name} />
-                    <figcaption>{pokemon.name}</figcaption>
-                  </figure>
-                </div>
-              </div>
-            </div>
-          )
-        })
-      }
-      </div>
-      <div className="pure-g spread-elements pokecontainer poison">
-      {
-        props.poisonPokemons && props.poisonPokemons.map(pokemon => {
-          return (
-            <div key={pokemon.name} className="pure-u-1 pure-u-sm-1-3 pure-u-md-1-6">
-              <div className="tile">
-                <div className="card">
-                  <figure className="">
-                    <img src={pokemon.image} alt={pokemon.name} />
+                    <hr className="dynamic-background"/>
                     <figcaption>{pokemon.name}</figcaption>
                   </figure>
                 </div>

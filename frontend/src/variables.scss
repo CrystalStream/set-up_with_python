@@ -9,3 +9,7 @@ $char-selected-color: #90CCA9;
 
 $white: #fff;
 $black: #212529;
+$beauty: #4DCBFA;
+$ugly: #F58020;
+
+$beaugly-background: linear-gradient(to bottom, $beauty 0%,$beauty 50%, $beauty 50%,$ugly 50%,$ugly 100%);

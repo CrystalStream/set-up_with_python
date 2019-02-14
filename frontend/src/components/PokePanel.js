@@ -4,23 +4,24 @@ import ChosenPokes from './ChosenPokes'
 import Filters from './Filters'
 import pokemons from '../utils/pokemons'
 
-export default class HeroPanel extends React.Component {
+export default class PokePanel extends React.Component {
 
   state = {
-    allPokemons: [],
-    fireTypePokemons: [],
-    waterTypePokemons: [],
-    poisonTypePokemons: [],
-    isFetching: false,
-    allowedTypes: ['fire', 'water', 'poison']
+    beautyPokemons: [],
+    uglyPokemons: []
   }
 
   componentDidMount() {
 
     this.setState({ 
-      fireTypePokemons: pokemons.firePokemons(),
-      waterTypePokemons: pokemons.waterPokemons(),
-      poisonTypePokemons: pokemons.poisonPokemons() })
+      beautyPokemons: pokemons.getByType('beauty'),
+      uglyPokemons: pokemons.getByType('ugly')
+    })
+  }
+
+  onSearchHandler = (data) => {
+    // const data = pokemons.getByType(typeA).concat(pokemons.getByType(typeB))
+    console.log('data', data)
   }
 
   render() {
@@ -30,16 +31,28 @@ export default class HeroPanel extends React.Component {
       <div className="nes-container with-title">
         <h2 className="title">World of Chars</h2>
 
+        <div className="more-info">
+          <div className="explanation">
+              <div className="color-square beauty-color">&nbsp;</div>
+              <label>Beautiful Pokemons</label>
+          </div>
+          <div className="explanation">
+            <div className="color-square beaugly-color">&nbsp;</div>
+            <label>Not-ugly-not-beauty Pokemons</label>
+          </div>
+          <div className="explanation">
+            <div className="color-square ugly-color">&nbsp;</div>
+            <label>Really Ugly Pokemons</label>
+          </div>
+        </div>
+
         <PokeSelect 
-          firePokemons={this.state.fireTypePokemons}
-          waterPokemons={this.state.waterTypePokemons}
-          poisonPokemons={this.state.poisonTypePokemons} />
+          beautyPokemons={this.state.beautyPokemons}
+          uglyPokemons={this.state.uglyPokemons} />
 
-        <ChosenPokes />
+        <Filters onSearch={this.onSearchHandler}/>
       </div>
-
-      <Filters />
-
+      
       <div>
         <a className="github-link" href="https://github.com/CrystalStream/set-up_with_python" target="_blank">
           <p className="nes-balloon from-right">Set it<br/>on GitHub</p>
