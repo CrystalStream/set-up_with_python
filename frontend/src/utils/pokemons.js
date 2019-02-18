@@ -84,5 +84,8 @@ const pokemons = [
 
 export default {
   allPokemons: () => pokemons,
-  getByType: type => pokemons.filter(p => p.types.includes(type))
+  getByType: (type) => pokemons.filter(p => p.types.includes(type)),
+  getByTypeWithout: (type, wtype) => pokemons.filter(p => {
+      return p.types.includes(type) && !p.types.includes(wtype)
+  })
 }

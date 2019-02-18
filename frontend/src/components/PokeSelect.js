@@ -11,9 +11,9 @@ export default function PokeSelect(props) {
         props.beautyPokemons && props.beautyPokemons.map(pokemon => {
           return (
             <div key={pokemon.name} className="pure-u-1 pure-u-sm-1-4">
-              <div className={`tile ${pokemon.types.length > 1 ? 'inactive' : ''} ${pokemon.types.join(' ')}`}>
+              <div className={`tile ${pokemon.selected ? 'active' : 'inactive'} ${pokemon.types.join(' ')}`}>
                 <div className="card">
-                  <figure className={`${pokemon.types.length > 1 ? 'selected' : ''}`}>
+                  <figure>
                     <img src={pokemon.image} alt={pokemon.name} />
                     <figcaption>{pokemon.name}</figcaption>
                   </figure>
@@ -31,9 +31,9 @@ export default function PokeSelect(props) {
         props.uglyPokemons && props.uglyPokemons.map(pokemon => {
           return (
             <div key={pokemon.name} className="pure-u-1 pure-u-sm-1-4">
-              <div className={`tile ${pokemon.types.length > 1 ? 'inactive' : ''} ${pokemon.types.join(' ')}`}>
+              <div className={`tile ${pokemon.selected ? 'active' : 'inactive'} ${pokemon.types.join(' ')}`}>
                 <div className="card">
-                  <figure className={`${pokemon.types.length > 1 ? 'selected' : ''}`}>
+                  <figure>
                     <img src={pokemon.image} alt={pokemon.name} />
                     <figcaption>{pokemon.name}</figcaption>
                   </figure>

@@ -30,7 +30,31 @@ export default class PokePanel extends React.Component {
     const content = await rawResponse.json();
   
     console.log(content);
+    
+    this.rearrange(content.data)
 
+  }
+
+  rearrange = (finalSet) => {
+    const bp = this.state.beautyPokemons.map(p => {
+      return {...p, selected: finalSet.includes(p.name)}
+    })
+    const up = this.state.uglyPokemons.map(p => {
+      return {...p, selected: finalSet.includes(p.name)}
+    })
+
+    this.setState({ beautyPokemons: bp, uglyPokemons: up })
+  }
+
+  resetAll = () => {
+    const bp = this.state.beautyPokemons.map(p => {
+      return {...p, selected: false}
+    })
+    const up = this.state.uglyPokemons.map(p => {
+      return {...p, selected: false}
+    })
+
+    this.setState({ beautyPokemons: bp, uglyPokemons: up })
   }
 
   render() {
@@ -55,19 +79,26 @@ export default class PokePanel extends React.Component {
           </div>
         </div>
 
-        <PokeSelect 
-          beautyPokemons={this.state.beautyPokemons}
-          uglyPokemons={this.state.uglyPokemons} />
 
-        <Filters onSearch={this.onSearchHandler}/>
+        <div className="pure-g">
+          <div className="pure-u-1 pure-u-md-18-24">
+            <PokeSelect 
+              beautyPokemons={this.state.beautyPokemons}
+              uglyPokemons={this.state.uglyPokemons} />
+          </div>
+          <div className="pure-u-1 pure-u-md-4-24">
+            <Filters onSearch={this.onSearchHandler} resetSelection={this.resetAll}/>
+          </div>
+        </div>
+
       </div>
-      
-      <div className="text-right">
-        <a className="github-link" href="https://github.com/CrystalStream/set-up_with_python" target="_blank">
+      {/*       
+      <div className="fixed-right">
+        <a className="github-link" href="https://github.com/CrystalStream/set-up_with_python" target="_blank" rel="noopener noreferrer">
           <p className="nes-balloon from-right">Set it<br/>on GitHub</p>
           <i className="nes-octocat"></i>
         </a>
-      </div>
+      </div> */}
     </>
   )
   }
