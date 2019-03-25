@@ -52,11 +52,17 @@ body {
   .nes-btn {
     font-size: 7px;
     transition: .3s;
+    width: 100%;
 
     &.selected {
       transform: scale(.8);
       opacity: .5;
     }
+  }
+
+  .flip-img {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
   }
 }
 
